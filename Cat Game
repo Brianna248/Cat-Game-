@@ -1,7 +1,7 @@
 cat_attributes = {
-    "intelligence": 0,
-    "energy": 0,
-    "weight": 0,
+    "intelligence": 60, #out of 100
+    "energy": 10, #out of 100
+    "weight": 4, #in kg
     # change the inital values above
 }
 
@@ -9,12 +9,12 @@ print("Welcome to my cat game!")
 
 # Take the user inputs for name and colour:
 name = input("Enter name:")
-# ...
+colour = input("Enter colour:")
 
 # start the while loop
 while True:
     # Finish the string below
-    option = input("What would you like to do? 1. Play with your cat 2. Train your cat 3. show stats")
+    option = input("What would you like to do? 1. Play with your cat 2. Train your cat 3.Feed your cat 4. Put your cat to sleep 4. See stats")
 
     if option == '1':
         # change the cat's attributes here
