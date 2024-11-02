@@ -1,15 +1,14 @@
 cat_attributes = {
     "intelligence": 50, #percentage 
     "energy": 50, #percentage 
-    "weight": 4.00, #in kg
-    # change the inital values above
-}
+    "weight": 3.50, #in kg
+    }
 
 print("Welcome to my cat game!")
 
 # Take the user inputs for name and colour:
-name = input("Enter name:")
-colour = input("Enter colour:")
+name = input("Enter your cat's name:")
+colour = input("Enter the colour of your cat:")
 
 alive=True
 
@@ -29,37 +28,36 @@ if cat_attributes["weight"] <2.5:
     print(name," has died of starvation. Starving your cat is a crime punishable by death. You have been warned...")
     alive=False 
 if cat_attributes["weight"]> 4:
-    print(name," weighs too much, please play with it (-o.5kg) or train it(-0.25kg)")
+    print(name," weighs too much, please play with it (-o.5kg) or train it(-0.25kg). If",name,"'s weight exceeds 4.5kg, it will die")
 if cat_attributes["weight"] >4.5:
     print(name," has died of obesity. *TIP: Get parenting classes.Now.*")
     alive=False 
 
 while alive==True:
-    option = input("What would you like to do? 1. Play with your cat 2. Train your cat 3.Feed your cat 4. Put your cat to sleep 4. See stats")
+    print("1. Play with your cat")
+    print("2. Train your cat")
+    print("3.Feed your cat")
+    print("4. Put your cat to sleep")
+    print("5. See stats")
+    option = input("What would you like to do?(Type in the number of the task you would like to complete)")
     print("-------------------------------------------------------")
     if option == "1":
-        print(name,"had a great time playing with you. It's intelligence has increased by 5 and weight has decreased by 0.5kg")
+        print(name,"had a great time playing with you. It's intelligence has increased by 5%, and weight has decreased by 0.5kg")
         cat_attributes["intellignce"]=int(cat_attributes["intelligence"])+5
         cat_attributes["weight"]= float(cat_attributes["weight"])-0.5
-    elif option == '2':
-        print(name,"has learned a new trick. It's intelligence has increased by 5 and weight has decreased by 0.25kg")
+    elif option == "2":
+        print(name,"has learned a new trick. It's intelligence has increased by 10%, and weight has decreased by 0.25kg")
         cat_attributes["intelligence"]=int(cat_attributes["intelligence"])+5
-         cat_attributes["weight"]=float(cat_attributes["weight"])-0.25
-    
-
-
-
-
-
-
-
-
-
-
+        cat_attributes["weight"]=float(cat_attributes["weight"])-0.25
+    elif option == "3":
+        print(name,"loved the food! It's energy has increased by 5%, and it's weight has increased by 0.5kg")
+        cat_attributes["energy"]=int(cat_attributes["energy"])+5
+        cat_attributes["weight"]=float(cat_attributes["weight"])+0.5
+    elif option== "4":
+        print(name,"had a great nap. It's energy has increased by 10%")
+        cat_attributes["energy"]=int(cat_attributes["energy"])+10
     else:
-     
+        print(cat_attributes)
 
-    # finish off the if statements below
-    if cat_attributes['energy'] < 0:
-        pass
-    # elif ...
+if alive==False:
+    print(cat_attributes)
