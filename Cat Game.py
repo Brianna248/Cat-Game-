@@ -12,27 +12,6 @@ colour = input("Enter the colour of your cat:")
 
 alive=True
 
-if cat_attributes["intelligence"] < 20: 
-    print(name,"'s intelligence is too low, please increase", name,"'s intelligence by playing with it (+5) or training it (+10). If", name,"'s intelligence goes below 10, it will die")
-if cat_attributes["energy"] < 20:
-    print(name," has too little energy, please increase",name,"'s energy level by feeding it (+5) or putting it to sleep (+10). If",name,"'s energy level goes below 10, it will die")
-if cat_attributes["weight"] <3:
-    print(name," weighs too little, please feed",name,"(+o.5kg). If",name,"'s weight goes below 2.5kg, it will die")
-if cat_attributes["intelligence"]<10:
-    print(name," has died of stupidity. Do better.")
-    alive=False
-if cat_attributes["energy"] <10:
-    print(name," has died of fatigue. *TIP: Never have children*")
-    alive=False
-if cat_attributes["weight"] <2.5:
-    print(name," has died of starvation. Starving your cat is a crime punishable by death. You have been warned...")
-    alive=False 
-if cat_attributes["weight"]> 4:
-    print(name," weighs too much, please play with it (-o.5kg) or train it(-0.25kg). If",name,"'s weight exceeds 4.5kg, it will die")
-if cat_attributes["weight"] >4.5:
-    print(name," has died of obesity. *TIP: Get parenting classes.Now.*")
-    alive=False 
-
 while alive==True:
     print("1. Play with your cat")
     print("2. Train your cat")
@@ -58,6 +37,35 @@ while alive==True:
         cat_attributes["energy"]=int(cat_attributes["energy"])+10
     else:
         print(cat_attributes)
+    
+    if cat_attributes["intelligence"] < 20: 
+        print(name,"'s intelligence is too low, please increase", name,"'s intelligence by playing with it (+5) or training it (+10). If", name,"'s intelligence goes below 10, it will die")
+    elif cat_attributes["energy"] < 20:
+        print(name," has too little energy, please increase",name,"'s energy level by feeding it (+5) or putting it to sleep (+10). If",name,"'s energy level goes below 10, it will die")
+    elif cat_attributes["weight"] <3:
+        print(name," weighs too little, please feed",name,"(+o.5kg). If",name,"'s weight goes below 2.5kg, it will die")
+    elif cat_attributes["weight"]> 4:
+        print(name," weighs too much, please play with it (-o.5kg) or train it(-0.25kg). If",name,"'s weight exceeds 4.5kg, it will die")
+    elif cat_attributes["intelligence"]<10 or cat_attributes["energy"] <10 or cat_attributes["weight"] <2.5 or cat_attributes["weight"] >4.5:
+        alive=False
+    else:
+        print("Your cat is still alive")
 
+#elif cat_attributes["intelligence"]<10:
+        #alive=False
+        #print(name," has died of stupidity. Do better.")
+    #elif cat_attributes["energy"] <10:
+        #alive=False
+        #print(name," has died of fatigue. *TIP: Never have children*")
+    #elif cat_attributes["weight"] <2.5:
+        #alive=False
+        #print(name," has died of starvation. Starving your cat is a crime punishable by death. You have been warned...")
+    #elif cat_attributes["weight"]> 4:
+        #print(name," weighs too much, please play with it (-o.5kg) or train it(-0.25kg). If",name,"'s weight exceeds 4.5kg, it will die")
+    #elif cat_attributes["weight"] >4.5:
+        #alive=False
+        #print(name," has died of obesity. *TIP: Get parenting classes.Now.*")
+    #else:
+        #print("Your cat is still alive")
 if alive==False:
     print(cat_attributes)
