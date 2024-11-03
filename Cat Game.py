@@ -24,10 +24,26 @@ while alive==True:
         print(name,"had a great time playing with you. It's intelligence has increased by 5%, and weight has decreased by 0.5kg")
         cat_attributes["intellignce"]=int(cat_attributes["intelligence"])+5
         cat_attributes["weight"]= float(cat_attributes["weight"])-0.5
+        if cat_attributes["weight"] <3:
+            print(name," weighs too little, please feed",name,"(+o.5kg). If",name,"'s weight goes below 2.5kg, it will die")
+        elif cat_attributes["weight"] <2.5:
+            alive=False
+            print(name," has died of starvation. Starving your cat is a crime punishable by death. You have been warned...")
+        elif cat_attributes["weight"]> 4:
+            print(name," weighs too much, please play with it (-o.5kg) or train it(-0.25kg). If",name,"'s weight exceeds 4.5kg, it will die")
+        elif cat_attributes["weight"] >4.5:
+            alive=False
+            print(name," has died of obesity. *TIP: Get parenting classes.Now.*")
+        else:
+            print("Your cat is still alive")
     elif option == "2":
         print(name,"has learned a new trick. It's intelligence has increased by 10%, and weight has decreased by 0.25kg")
         cat_attributes["intelligence"]=int(cat_attributes["intelligence"])+5
         cat_attributes["weight"]=float(cat_attributes["weight"])-0.25
+
+
+
+
     elif option == "3":
         print(name,"loved the food! It's energy has increased by 5%, and it's weight has increased by 0.5kg")
         cat_attributes["energy"]=int(cat_attributes["energy"])+5
@@ -37,7 +53,10 @@ while alive==True:
         cat_attributes["energy"]=int(cat_attributes["energy"])+10
     else:
         print(cat_attributes)
-    
+
+
+        
+
     if cat_attributes["intelligence"] < 20: 
         print(name,"'s intelligence is too low, please increase", name,"'s intelligence by playing with it (+5) or training it (+10). If", name,"'s intelligence goes below 10, it will die")
     elif cat_attributes["energy"] < 20:
